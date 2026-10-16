@@ -38,6 +38,6 @@ jobs:
             echo 'The first stable release with macOS binaries has not populated the tap yet.'
             exit 0
           fi
-          brew tap gmelikov/tap "$GITHUB_WORKSPACE"
-          brew install --formula gmelikov/tap/plavno
-          brew test --verbose gmelikov/tap/plavno
+          brew tap gmelikov/plavno "$GITHUB_WORKSPACE"
+          brew install --formula gmelikov/plavno/plavno
+          brew test --verbose gmelikov/plavno/plavno

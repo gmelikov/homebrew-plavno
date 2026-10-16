@@ -1,11 +1,11 @@
-# gmelikov Homebrew tap
+# plavno Homebrew tap
 
 Binary distribution of [plavno](https://github.com/gmelikov/plavno) for macOS
 Apple Silicon and Intel. The formula installs the player and its Spotify and
 YouTube helpers. Rust is not required.
 
 ```sh
-brew install gmelikov/tap/plavno
+brew install gmelikov/plavno/plavno
 ```
 
 Update with `brew update && brew upgrade plavno`. Install `ffmpeg` separately
