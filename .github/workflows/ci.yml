@@ -1,0 +1,43 @@
+name: Formula
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: formula-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HOMEBREW_NO_AUTO_UPDATE: '1'
+  HOMEBREW_NO_ANALYTICS: '1'
+  HOMEBREW_NO_INSTALL_CLEANUP: '1'
+
+jobs:
+  test:
+    name: Install and test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-15-intel]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install and test formula
+        run: |
+          if [[ ! -f Formula/plavno.rb ]]; then
+            echo 'The first stable release with macOS binaries has not populated the tap yet.'
+            exit 0
+          fi
+          brew tap gmelikov/tap "$GITHUB_WORKSPACE"
+          brew install --formula gmelikov/tap/plavno
+          brew test --verbose gmelikov/tap/plavno
