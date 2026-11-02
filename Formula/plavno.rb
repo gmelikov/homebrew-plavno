@@ -1,20 +1,20 @@
 class Plavno < Formula
   desc "Terminal music player with service waves and library shuffle"
   homepage "https://github.com/gmelikov/plavno"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   depends_on :macos
 
   on_macos do
     on_arm do
-      url "https://github.com/gmelikov/plavno/releases/download/v0.4.0/plavno-0.4.0-macos-aarch64.tar.gz"
-      sha256 "609a554eee7bf967528eeb1d0bae1a7bb01e20d3405f7b46d743d56fae5a4dcb"
+      url "https://github.com/gmelikov/plavno/releases/download/v0.4.1/plavno-0.4.1-macos-aarch64.tar.gz"
+      sha256 "10c08b5ba52a247136d4dfc030a2c91d36fabcb978940591c56689ad12e60a1d"
     end
 
     on_intel do
-      url "https://github.com/gmelikov/plavno/releases/download/v0.4.0/plavno-0.4.0-macos-x86_64.tar.gz"
-      sha256 "7f59c3bd7dd6257c0eb3a9d3782e0c848b7feafe43fc8819f2d8cd6716a62d8b"
+      url "https://github.com/gmelikov/plavno/releases/download/v0.4.1/plavno-0.4.1-macos-x86_64.tar.gz"
+      sha256 "ad4b0c7d7dc5c7f5d83b6844505c7049423ec1ba581c356567a3ba90c7f81fb4"
     end
   end
 
